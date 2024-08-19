@@ -52,8 +52,8 @@
 </head>
 <body>
     <!-- 按鈕區 -->
-    <button class="button" onclick="drawCard('A')">男生</button>
-    <button class="button" onclick="drawCard('B')">女生</button>
+    <button id="butA" class="button" onclick="drawCard('A')">男生</button>
+    <button id="butB" class="button" onclick="drawCard('B')">女生</button>
 
     <!-- 顯示牌面區 -->
     <div id="cardA" class="list-item">
@@ -104,7 +104,13 @@
                 div.appendChild(img);
 
                 // 將 div 添加到頁面中
-                document.getElementById('cardA').innerHTML = div;
+                document.getElementById('cardA').appendChild(div);
+                // 獲取按鈕元素
+                const myButton = document.getElementById('butA');
+                if (!myButton.disabled) {
+                   // 如果按鈕目前是啟用的，則禁用它
+                   myButton.disabled = true;
+                }
             
             } else if (player === 'B') {
                 cardB = drawnCard;
