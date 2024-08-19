@@ -23,8 +23,8 @@
     <script>
         // 定義10個項目，每個項目包含一個字串和一個圖檔
         const items = [
-            { text: "項目", image: "S__10280976.jpg" },
-            { text: "項目2", image: "S__10280976.jpg" },
+            { text: "項目1", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Star_of_the_Order_of_the_Star_of_India_(gold).svg/2048px-Star_of_the_Order_of_the_Star_of_India_(gold).svg.png" },
+            { text: "項目2", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/British_Raj_Red_Ensign.svg/2560px-British_Raj_Red_Ensign.svg.png" },
             { text: "項目3", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Star_of_the_Order_of_the_Star_of_India_(gold).svg/2048px-Star_of_the_Order_of_the_Star_of_India_(gold).svg.png" },
             { text: "項目4", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Star_of_the_Order_of_the_Star_of_India_(gold).svg/2048px-Star_of_the_Order_of_the_Star_of_India_(gold).svg.png" },
             { text: "項目5", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Star_of_the_Order_of_the_Star_of_India_(gold).svg/2048px-Star_of_the_Order_of_the_Star_of_India_(gold).svg.png" },
@@ -41,7 +41,7 @@
 
         // 將隨機選擇的項目顯示在網頁上
         const itemContainer = document.getElementById('random-item');
-        itemContainer.innerHTML = `<h2>${randomItem.text}</h2><img src="${randomItem.image}" width="30" height="20" alt="${randomItem.text}">`;
+        itemContainer.innerHTML = `<h2>${randomItem.text}</h2><img src="${randomItem.image}" width="300" height="200" alt="${randomItem.text}">`;
     </script>
 </body>
 </html>
