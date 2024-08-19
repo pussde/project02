@@ -56,9 +56,7 @@
     <button id="butB" class="button" onclick="drawCard('B')">女生</button>
 
     <!-- 顯示牌面區 -->
-    <div id="cardA" class="list-item">
-      男生 的牌：尚未抽牌 
-      <img src="image2.jpg" alt="圖片2"> 
+    <div id="cardA"> 
     </div>
    
     <div id="cardB" class="card">
@@ -77,6 +75,10 @@
         // 儲存玩家 A 和玩家 B 的牌
         let cardA = null;
         let cardB = null;
+
+        // 獲取按鈕元素
+        const myButtonA = document.getElementById('butA');
+        const myButtonB = document.getElementById('butB');
 
         // 隨機選擇一張牌
         function drawCard(player) {
@@ -105,11 +107,10 @@
 
                 // 將 div 添加到頁面中
                 document.getElementById('cardA').appendChild(div);
-                // 獲取按鈕元素
-                const myButton = document.getElementById('butA');
-                if (!myButton.disabled) {
+
+                if (!myButtonA.disabled) {
                    // 如果按鈕目前是啟用的，則禁用它
-                   myButton.disabled = true;
+                   myButtonA.disabled = true;
                 }
             
             } else if (player === 'B') {
@@ -134,6 +135,14 @@
                 // 重置牌以便下一輪比較
                 cardA = null;
                 cardB = null;
+                if (myButtonA.disabled) {
+                  // 如果按鈕目前是禁用的，則啟用它
+                  myButtonA.disabled = false;
+                }
+                if (myButtonB.disabled) {
+                  // 如果按鈕目前是禁用的，則啟用它
+                  myButtonB.disabled = false;
+                }
             }
         }
 
