@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>隨機項目展示</title>
+    <style>
+        .item {
+            margin: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="random-item" class="item"></div>
+
+    <script>
+        // 定義10個項目，每個項目包含一個字串和一個圖檔
+        const items = [
+            { text: "項目", image: "S__10280976.jpg" },
+            { text: "項目2", image: "S__10280976.jpg" },
+            { text: "項目3", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Star_of_the_Order_of_the_Star_of_India_(gold).svg/2048px-Star_of_the_Order_of_the_Star_of_India_(gold).svg.png" },
+            { text: "項目4", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Star_of_the_Order_of_the_Star_of_India_(gold).svg/2048px-Star_of_the_Order_of_the_Star_of_India_(gold).svg.png" },
+            { text: "項目5", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Star_of_the_Order_of_the_Star_of_India_(gold).svg/2048px-Star_of_the_Order_of_the_Star_of_India_(gold).svg.png" },
+            { text: "項目6", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Star_of_the_Order_of_the_Star_of_India_(gold).svg/2048px-Star_of_the_Order_of_the_Star_of_India_(gold).svg.png" },
+            { text: "項目7", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Star_of_the_Order_of_the_Star_of_India_(gold).svg/2048px-Star_of_the_Order_of_the_Star_of_India_(gold).svg.png" },
+            { text: "項目8", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Star_of_the_Order_of_the_Star_of_India_(gold).svg/2048px-Star_of_the_Order_of_the_Star_of_India_(gold).svg.png" },
+            { text: "項目9", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Star_of_the_Order_of_the_Star_of_India_(gold).svg/2048px-Star_of_the_Order_of_the_Star_of_India_(gold).svg.png" },
+            { text: "項目10", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Star_of_the_Order_of_the_Star_of_India_(gold).svg/2048px-Star_of_the_Order_of_the_Star_of_India_(gold).svg.png" }
+        ];
+
+        // 隨機選擇一個項目
+        const randomIndex = Math.floor(Math.random() * items.length);
+        const randomItem = items[randomIndex];
+
+        // 將隨機選擇的項目顯示在網頁上
+        const itemContainer = document.getElementById('random-item');
+        itemContainer.innerHTML = `<h2>${randomItem.text}</h2><img src="${randomItem.image}" alt="${randomItem.text}">`;
+    </script>
+</body>
+</html>
