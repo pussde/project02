@@ -93,10 +93,19 @@
         // 將牌的數值和花色轉換為顯示名稱
         function convertCardToDisplay(card) {
             const cardNames = {
-                1: 'A',
-                11: 'J',
-                12: 'Q',
-                13: 'K'
+                1: 'Jan',
+                2: 'Feb',
+                3: 'Mar',
+                4: 'Apr',
+                5: 'May',
+                6: 'Jun',
+                7: 'Jul',
+                8: 'Aug',
+                9: 'Sep,
+                10: 'Oct',
+                11: 'Nov',
+                12: 'Dec',
+                13: 'IntC'
             };
             return `${card.suit} ${cardNames[card.value] || card.value}`;
         }
