@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>三維資料表顯示</title>
+    <style>
+        /* 調整 div 的顯示樣式 */
+        .list-item {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        /* 圖片樣式 */
+        .list-item img {
+            margin-left: 10px; /* 文字與圖片之間的間距 */
+            width: 50px; /* 圖片寬度 */
+            height: 50px; /* 圖片高度 */
+        }
+    </style>
+</head>
+<body>
+    <div id="content"></div>
+
+    <script>
+        // 定義一個三維陣列，其中每個元素代表一個數據項
+        const dataTable = [
+            [ // 第一維
+                ['Item 1.1.1', 'image1.jpg'], // 第二維 (Item 1)
+                ['Item 1.2.1', 'image2.jpg']  // 第二維 (Item 2)
+            ],
+            [ // 第一維
+                ['Item 2.1.1', 'image3.jpg'], // 第二維 (Item 1)
+                ['Item 2.2.1', 'image4.jpg']  // 第二維 (Item 2)
+            ]
+        ];
+
+        // 根據前兩維索引取得第三維的值並顯示
+        function displayData(x, y) {
+            const item = dataTable[x][y];
+            const description = item[0];
+            const imageUrl = item[1];
+
+            // 創建一個新的 div 並顯示文字和圖片
+            const div = document.createElement('div');
+            div.className = 'list-item';
+
+            // 文字節點
+            const textNode = document.createTextNode(description);
+            div.appendChild(textNode);
+
+            // 圖片節點
+            const img = document.createElement('img');
+            img.src = imageUrl;
+            img.alt = description;
+            div.appendChild(img);
+
+            // 將 div 添加到頁面中
+            document.getElementById('content').appendChild(div);
+        }
+
+        // 這裡我們可以使用循環來顯示所有的項目
+        for (let i = 0; i < dataTable.length; i++) {
+            for (let j = 0; j < dataTable[i].length; j++) {
+                displayData(i, j);
+            }
+        }
+    </script>
+</body>
+</html>
