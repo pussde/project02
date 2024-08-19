@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>隨機選撲克牌比大小</title>
+    <title>隨機選卡牌</title>
     <style>
         /* 按鈕樣式 */
         .button {
@@ -24,7 +24,7 @@
         /* 顯示結果的區域樣式 */
         .result {
             margin-top: 20px;
-            font-size: 18px;
+            font-size: 28px;
             font-weight: bold;
         }
 
@@ -37,19 +37,19 @@
 </head>
 <body>
     <!-- 按鈕區 -->
-    <button class="button" onclick="drawCard('A')">玩家 A 抽牌</button>
-    <button class="button" onclick="drawCard('B')">玩家 B 抽牌</button>
+    <button class="button" onclick="drawCard('A')">男生</button>
+    <button class="button" onclick="drawCard('B')">女生</button>
 
     <!-- 顯示牌面區 -->
-    <div id="cardA" class="card">玩家 A 的牌：尚未抽牌</div>
-    <div id="cardB" class="card">玩家 B 的牌：尚未抽牌</div>
+    <div id="cardA" class="card">男生 的牌：尚未抽牌</div>
+    <div id="cardB" class="card">女生 的牌：尚未抽牌</div>
 
     <!-- 顯示結果區 -->
     <div id="result" class="result"></div>
 
     <script>
         // 定義撲克牌的花色和數值
-        const suits = ['♠️', '♥️', '♦️', '♣️'];
+        const suits = ['B', 'AB', 'O', 'A'];
         const values = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
 
         // 儲存玩家 A 和玩家 B 的牌
@@ -64,19 +64,19 @@
 
             if (player === 'A') {
                 cardA = drawnCard;
-                document.getElementById('cardA').innerHTML = `玩家 A 的牌：${convertCardToDisplay(drawnCard)}`;
+                document.getElementById('cardA').innerHTML = `男生的牌：${convertCardToDisplay(drawnCard)}`;
             } else if (player === 'B') {
                 cardB = drawnCard;
-                document.getElementById('cardB').innerHTML = `玩家 B 的牌：${convertCardToDisplay(drawnCard)}`;
+                document.getElementById('cardB').innerHTML = `女生的牌：${convertCardToDisplay(drawnCard)}`;
             }
 
             // 如果兩個玩家都已經抽了牌，就比較大小
             if (cardA !== null && cardB !== null) {
                 let resultText;
                 if (cardA.value > cardB.value) {
-                    resultText = "結果：玩家 A 勝利！";
+                    resultText = "結果：男生勝利！";
                 } else if (cardA.value < cardB.value) {
-                    resultText = "結果：玩家 B 勝利！";
+                    resultText = "結果：女生勝利！";
                 } else {
                     resultText = compareSuits(cardA.suit, cardB.suit);
                 }
@@ -104,16 +104,16 @@
         // 比較花色，如果數值相同，花色順序：♠️ > ♥️ > ♦️ > ♣️
         function compareSuits(suitA, suitB) {
             const suitOrder = {
-                '♠️': 4,
-                '♥️': 3,
-                '♦️': 2,
-                '♣️': 1
+                'B': 4,
+                'AB': 3,
+                'O': 2,
+                'A': 1
             };
 
             if (suitOrder[suitA] > suitOrder[suitB]) {
-                return "結果：玩家 A 勝利！（花色優勢）";
+                return "結果：男生 勝利！（花色優勢）";
             } else if (suitOrder[suitA] < suitOrder[suitB]) {
-                return "結果：玩家 B 勝利！（花色優勢）";
+                return "結果：女生 勝利！（花色優勢）";
             } else {
                 return "結果：平手！";
             }
