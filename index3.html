@@ -81,7 +81,13 @@
                 document.getElementById('cardA').innerHTML = content;
                 //document.getElementById('cardA').innerHTML = `男生的牌：${convertCardToDisplay(drawnCard)}`;
             } else if (player === 'B') {
-                let content = "女生的牌：" + convertCardToDisplay(drawnCard) + "<img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/British_Raj_Red_Ensign.svg/2560px-British_Raj_Red_Ensign.svg.png\" alt=\"1\">"
+                let content = ''
+                let url = getFemaleImageURLToDisplay(drawnCard);
+                if (url !== '') {
+                   content = "女生的牌：" + convertCardToDisplay(drawnCard) + "<img src=\"" + getFemaleImageURLToDisplay(drawnCard) + "\" alt=\"1\">"
+                } else {
+                   content = "女生的牌：" + convertCardToDisplay(drawnCard)
+                }
                 cardB = drawnCard;
                 document.getElementById('cardB').innerHTML = content;
                 //document.getElementById('cardB').innerHTML = `女生的牌：${convertCardToDisplay(drawnCard)}`;
