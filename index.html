@@ -34,6 +34,13 @@
             margin: 10px;
         }
 
+         /* 圖片樣式 */
+        .card img {
+            margin-left: 14px; /* 文字與圖片之間的間距 */
+            width: 80px; /* 圖片寬度 */
+            height: 80px; /* 圖片高度 */
+        }
+
          /* 調整 div 的顯示樣式 */
         .list-item {
             display: flex;
@@ -61,7 +68,6 @@
    
     <div id="cardB" class="card">
       女生 的牌：尚未抽牌 
-      <img src="image1.jpg" alt="圖片1">
     </div>
 
     <!-- 顯示結果區 -->
@@ -114,8 +120,10 @@
                 }
             
             } else if (player === 'B') {
+                let content = "女生的牌：${convertCardToDisplay(drawnCard)}" + "<img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/British_Raj_Red_Ensign.svg/2560px-British_Raj_Red_Ensign.svg.png\" alt=\"1\">"
                 cardB = drawnCard;
-                document.getElementById('cardB').innerHTML = `女生的牌test：${convertCardToDisplay(drawnCard)}`;
+                document.getElementById('cardB').innerHTML = content;
+                //document.getElementById('cardB').innerHTML = `女生的牌：${convertCardToDisplay(drawnCard)}`;
             }
 
             // 如果兩個玩家都已經抽了牌，就比較大小
