@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>隨機選卡牌</title>
+    <style>
+        /* 按鈕樣式 */
+        .button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+            border: 1px solid #007bff;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 5px;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        /* 顯示結果的區域樣式 */
+        .result {
+            margin-top: 20px;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        /* 顯示牌的樣式 */
+        .card {
+            font-size: 24px;
+            margin: 10px;
+        }
+   
+        /* 圖片樣式 */
+        .card img {
+            margin-left: 14px; /* 文字與圖片之間的間距 */
+            width: 180px; /* 圖片寬度 */
+            height: 160px; /* 圖片高度 */
+        }
+    </style>
+</head>
+<body>
+    <!-- 按鈕區 -->
+    <button class="button" onclick="drawCard('A')">男生</button>
+    <button class="button" onclick="drawCard('B')">女生</button>
+
+    <!-- 顯示牌面區 -->
+    <div id="cardA" class="card">男生 的牌：尚未抽牌</div>
+    <div id="cardB" class="card">女生 的牌：尚未抽牌</div>
+
+    <!-- 顯示結果區 -->
+    <div id="result" class="result"></div>
+
+    <script>
+        // 👁定義撲克牌的花色和數值
+        const suits = ['🅱️', '🆎', '🅾️', '🅰️'];
+        const values = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+
+        // 儲存玩家 A 和玩家 B 的牌
+        let cardA = null;
+        let cardB = null;
+
+        // 隨機選擇一張牌
+        function drawCard(player) {
+            const randomSuit = suits[Math.floor(Math.random() * suits.length)];
+            const randomValue = values[Math.floor(Math.random() * values.length)];
+            const drawnCard = { suit: randomSuit, value: randomValue };
+
+            if (player === 'A') {
+                let content = "男生的牌：" + convertCardToDisplay(drawnCard) + "<img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Star_of_the_Order_of_the_Star_of_India_(gold).svg/2048px-Star_of_the_Order_of_the_Star_of_India_(gold).svg.png\" alt=\"1\">"
+                cardA = drawnCard;
+                document.getElementById('cardA').innerHTML = content;
+                //document.getElementById('cardA').innerHTML = `男生的牌：${convertCardToDisplay(drawnCard)}`;
+            } else if (player === 'B') {
+                let content = "女生的牌：" + convertCardToDisplay(drawnCard) + "<img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/British_Raj_Red_Ensign.svg/2560px-British_Raj_Red_Ensign.svg.png\" alt=\"1\">"
+                cardB = drawnCard;
+                document.getElementById('cardB').innerHTML = content;
+                //document.getElementById('cardB').innerHTML = `女生的牌：${convertCardToDisplay(drawnCard)}`;
+            }
+
+            // 如果兩個玩家都已經抽了牌，就比較大小
+            if (cardA !== null && cardB !== null) {
+                let resultText;
+                if (cardA.value > cardB.value) {
+                    resultText = "結果：男生勝利！";
+                } else if (cardA.value < cardB.value) {
+                    resultText = "結果：女生勝利！";
+                } else {
+                    resultText = compareSuits(cardA.suit, cardB.suit);
+                }
+
+                // 顯示結果
+                document.getElementById('result').innerHTML = resultText;
+
+                // 重置牌以便下一輪比較
+                cardA = null;
+                cardB = null;
+            }
+        }
+
+        // 👁將牌的數值和花色轉換為顯示名稱
+        function convertCardToDisplay(card) {
+            const cardNames = {
+                1: 'Jan',
+                2: 'Feb',
+                3: 'Mar',
+                4: 'Apr',
+                5: 'May',
+                6: 'Jun',
+                7: 'Jul',
+                8: 'Aug',
+                9: 'Sep',
+                10: 'Oct',
+                11: 'Nov',
+                12: 'Dec',
+                13: 'IntC'
+            };
+            
+            const cardPinyinA = {
+                1: 'ㄇM',
+                2: '了Ď[ð]',
+                3: 'ㄋN',
+                4: '入Z',
+                5: '兀Ñ',
+                6: '厂H',
+                7: '日Ž[ʒ]',
+                8: 'ㄖZß[ʐ]',
+                9: 'ㄝE',
+                10: 'ㄡŌ',
+                11: 'ㄥEng',
+                12: 'ㄦEr',
+                13: 'ㄌL'
+            };
+
+            const cardPinyinB = {
+                1: 'ㄅP',
+                2: 'ㄈF',
+                3: 'ㄉD',
+                4: 'ㄗTs',
+                5: 'ㄍK',
+                6: 'ㄐTc',
+                7: '子Dž',
+                8: 'ㄓTß[tʂ]',
+                9: 'ㄚA',
+                10: 'ㄞÆ',
+                11: 'ㄢÃ',
+                12: 'ㄧĪ',
+                13: '弋Y'
+            };
+
+            const cardPinyinAB = {
+                1: 'ㄆPh',
+                2: '方V',
+                3: 'ㄊTh',
+                4: 'ㄘTsh',
+                5: 'ㄎKh',
+                6: 'ㄑTch',
+                7: '丘Tš[u]',
+                8: '彳Tßh[tʂʰ]',
+                9: 'ㄛO',
+                10: 'ㄟĒ',
+                11: 'ㄤAng',
+                12: 'ㄨU',
+                13: '无W'
+            };
+
+            const cardPinyinO = {
+                1: '万B',
+                2: '习Th',
+                3: '力D',
+                4: 'ㄙS',
+                5: '广G',
+                6: 'ㄒC',
+                7: '下Š',
+                8: 'ㄕSß[ʂ]',
+                9: 'ㄜÖ',
+                10: 'ㄠÅ',
+                11: 'ㄤAng',
+                12: 'ㄩÜ',
+                13: '乃R'
+            };
+
+            switch (card.suit) {
+              case '🅱️':
+                console.log('B型的拼音.');
+                return `${card.suit} ${cardNames[card.value] || card.value} ${cardPinyinB[card.value]}`;
+              break;
+              case '🆎':
+                console.log('AB型的拼音.');
+                return `${card.suit} ${cardNames[card.value] || card.value} ${cardPinyinAB[card.value]}`;
+              break;
+              case '🅾️':
+                console.log('O型的拼音.');
+                return `${card.suit} ${cardNames[card.value] || card.value} ${cardPinyinO[card.value]}`;
+              break;
+              case '🅰️':
+                console.log('A型的拼音.');
+                return `${card.suit} ${cardNames[card.value] || card.value} ${cardPinyinA[card.value]}`;
+              break;
+              default:
+                console.log(`Sorry, we are out of ${expr}.`);
+                return `${card.suit} ${cardNames[card.value] || card.value}`;
+              break;
+            }
+            //return `${card.suit} ${cardNames[card.value] || card.value}`;
+        }
+
+        // 👁比較花色，如果數值相同，花色順序：♠️ > ♥️ > ♦️ > ♣️
+        function compareSuits(suitA, suitB) {
+            const suitOrder = {
+                '🅱️': 4,
+                '🆎': 3,
+                '🅾️': 2,
+                '🅰️': 1
+            };
+
+            if (suitOrder[suitA] > suitOrder[suitB]) {
+                return "結果：男生 勝利！（花色優勢）";
+            } else if (suitOrder[suitA] < suitOrder[suitB]) {
+                return "結果：女生 勝利！（花色優勢）";
+            } else {
+                return "結果：平手！";
+            }
+        }
+    </script>
+</body>
+</html>
