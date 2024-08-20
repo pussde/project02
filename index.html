@@ -37,8 +37,8 @@
          /* 圖片樣式 */
         .card img {
             margin-left: 14px; /* 文字與圖片之間的間距 */
-            width: 80px; /* 圖片寬度 */
-            height: 80px; /* 圖片高度 */
+            width: 180px; /* 圖片寬度 */
+            height: 160px; /* 圖片高度 */
         }
 
          /* 調整 div 的顯示樣式 */
@@ -120,7 +120,7 @@
                 }
             
             } else if (player === 'B') {
-                let content = "女生的牌：${convertCardToDisplay(drawnCard)}" + "<img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/British_Raj_Red_Ensign.svg/2560px-British_Raj_Red_Ensign.svg.png\" alt=\"1\">"
+                let content = "女生的牌：" + convertCardToDisplay(drawnCard) + "<img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/British_Raj_Red_Ensign.svg/2560px-British_Raj_Red_Ensign.svg.png\" alt=\"1\">"
                 cardB = drawnCard;
                 document.getElementById('cardB').innerHTML = content;
                 //document.getElementById('cardB').innerHTML = `女生的牌：${convertCardToDisplay(drawnCard)}`;
