@@ -37,8 +37,8 @@
         /* 圖片樣式 */
         .card img {
             margin-left: 14px; /* 文字與圖片之間的間距 */
-            width: 180px; /* 圖片寬度 */
-            height: 160px; /* 圖片高度 */
+            width: 160px; /* 圖片寬度 */
+            height: 120px; /* 圖片高度 */
         }
     </style>
 </head>
@@ -70,7 +70,7 @@
             const drawnCard = { suit: randomSuit, value: randomValue };
 
             if (player === 'A') {
-                let content = "男生的牌：" + convertCardToDisplay(drawnCard) + "<img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Star_of_the_Order_of_the_Star_of_India_(gold).svg/2048px-Star_of_the_Order_of_the_Star_of_India_(gold).svg.png\" alt=\"1\">"
+                let content = "男生的牌：" + convertCardToDisplay(drawnCard) + "<img src=" + getMaleImageURLToDisplay(drawnCard) + "alt=\"1\">"
                 cardA = drawnCard;
                 document.getElementById('cardA').innerHTML = content;
                 //document.getElementById('cardA').innerHTML = `男生的牌：${convertCardToDisplay(drawnCard)}`;
@@ -206,6 +206,188 @@
               break;
             }
             //return `${card.suit} ${cardNames[card.value] || card.value}`;
+        }
+
+         // 依照牌的數值和花色取得圖片網址 男生
+        function getMaleImageURLToDisplay(card) {
+            const cardImageMSrcA = {
+                1: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Flag_of_Singapore_in_the_Straits_Settlements.svg/2560px-Flag_of_Singapore_in_the_Straits_Settlements.svg.png',
+                2: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Flag_of_the_British_Straits_Settlements_(1925%E2%80%931946).svg/2560px-Flag_of_the_British_Straits_Settlements_(1925%E2%80%931946).svg.png',
+                3: '',
+                4: '',
+                5: '',
+                6: '',
+                7: '',
+                8: '',
+                9: '',
+                10: '',
+                11: '',
+                12: '',
+                13: ''
+            };
+
+            const cardImageMSrcB = {
+                1: '',
+                2: '',
+                3: '',
+                4: '',
+                5: '',
+                6: '',
+                7: '',
+                8: '',
+                9: '',
+                10: '',
+                11: '',
+                12: '',
+                13: ''
+            };
+
+            const cardImageMSrcAB = {
+                1: '',
+                2: '',
+                3: '',
+                4: '',
+                5: '',
+                6: '',
+                7: '',
+                8: '',
+                9: '',
+                10: '',
+                11: '',
+                12: '',
+                13: ''
+            };
+
+            const cardImageMSrcO = {
+                1: '',
+                2: '',
+                3: '',
+                4: '',
+                5: '',
+                6: '',
+                7: '',
+                8: '',
+                9: '',
+                10: '',
+                11: '',
+                12: '',
+                13: ''
+            };
+            
+             switch (card.suit) {
+              case '🅱️':
+                console.log('B型的圖檔.');
+                return `${cardImageMSrcB[card.value]}`;
+              break;
+              case '🆎':
+                console.log('AB型的圖檔.');
+                return `${cardImageMSrcAB[card.value]}`;
+              break;
+              case '🅾️':
+                console.log('O型的圖檔.');
+                 return `${cardImageMSrcO[card.value]}`;
+              break;
+              case '🅰️':
+                console.log('A型的圖檔.');
+                return `${cardImageMSrcA[card.value]}`;
+              break;
+              default:
+                console.log(`Sorry, we are out of xxxxxxx.`);
+                return `${cardImageMSrcA[card.value]}`;
+              break;
+            }
+
+        }
+
+        // 依照牌的數值和花色取得圖片網址 女生
+        function getFemaleImageURLToDisplay(card) {
+            const cardImageFSrcA = {
+                1: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Flag_of_Singapore_in_the_Straits_Settlements.svg/2560px-Flag_of_Singapore_in_t>
+                2: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Flag_of_the_British_Straits_Settlements_(1925%E2%80%931946).svg/2560px-Flag_of>
+                3: '',
+                4: '',
+                5: '',
+                6: '',
+                7: '',
+                8: '',
+                9: '',
+                10: '',
+                11: '',
+                12: '',
+                13: ''
+            };
+     
+             const cardImageFSrcB = {
+                1: '',
+                2: '',
+                3: '',
+                4: '',
+                5: '',
+                6: '',
+                7: '',
+                8: '',
+                9: '',
+                10: '',
+                11: '',
+                12: '',
+                13: ''
+            };
+
+            const cardImageFSrcAB = {
+                1: '',
+                2: '',
+                3: '',
+                4: '',
+                5: '',
+                6: '',
+                7: '',
+                8: '',
+                9: '',
+                10: '',
+                11: '',
+                12: '',
+                13: ''
+            };
+
+            const cardImageFSrcO = {
+                1: '',
+                2: '',
+                3: '',
+                4: '',
+                5: '',
+                6: '',
+                7: '',
+                8: '',
+                9: '',
+                10: '',
+                11: '',
+                12: '',
+                13: ''
+            };
+            
+            switch (card.suit) {
+              case '🅱️':
+                console.log('B型的圖檔.');
+                return `${cardImageFSrcB[card.value]}`;
+              break;
+              case '🆎':
+                console.log('AB型的圖檔.');
+                return `${cardImageFSrcAB[card.value]}`;
+              break;
+              case '🅾️':
+                console.log('O型的圖檔.');
+                 return `${cardImageFSrcO[card.value]}`;
+              break;
+              case '🅰️':
+                console.log('A型的圖檔.');
+                return `${cardImageFSrcA[card.value]}`;
+              break;
+              default:
+                console.log(`Sorry, we are out of xxxxxxx.`);
+                return `${cardImageFSrcA[card.value]}`;
+              break;
+            }
+
         }
 
         // 👁比較花色，如果數值相同，花色順序：♠️ > ♥️ > ♦️ > ♣️
