@@ -70,7 +70,7 @@
             const drawnCard = { suit: randomSuit, value: randomValue };
 
             if (player === 'A') {
-                let content = "男生的牌：" + convertCardToDisplay(drawnCard) + "<img src=" + getMaleImageURLToDisplay(drawnCard) + "alt=\"1\">"
+                let content = "男生的牌：" + convertCardToDisplay(drawnCard) + "<img src=\"" + getMaleImageURLToDisplay(drawnCard) + "\" alt=\"1\">"
                 cardA = drawnCard;
                 document.getElementById('cardA').innerHTML = content;
                 //document.getElementById('cardA').innerHTML = `男生的牌：${convertCardToDisplay(drawnCard)}`;
