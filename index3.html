@@ -70,7 +70,13 @@
             const drawnCard = { suit: randomSuit, value: randomValue };
 
             if (player === 'A') {
-                let content = "男生的牌：" + convertCardToDisplay(drawnCard) + "<img src=\"" + getMaleImageURLToDisplay(drawnCard) + "\" alt=\"1\">"
+                let content = ''
+                let url = getMaleImageURLToDisplay(drawnCard);
+                if (url !== '') { 
+                   content = "男生的牌：" + convertCardToDisplay(drawnCard) + "<img src=\"" + getMaleImageURLToDisplay(drawnCard) + "\" alt=\"1\">"
+                } else {
+                   content = "男生的牌：" + convertCardToDisplay(drawnCard)
+                }
                 cardA = drawnCard;
                 document.getElementById('cardA').innerHTML = content;
                 //document.getElementById('cardA').innerHTML = `男生的牌：${convertCardToDisplay(drawnCard)}`;
