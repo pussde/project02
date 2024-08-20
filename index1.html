@@ -107,7 +107,94 @@
                 12: 'Dec',
                 13: 'IntC'
             };
-            return `${card.suit} ${cardNames[card.value] || card.value}`;
+
+            const cardPinyinA = {
+                1: 'ㄇM',
+                2: '',
+                3: 'ㄋN',
+                4: 'Apr',
+                5: 'May',
+                6: 'Jun',
+                7: 'Jul',
+                8: 'Aug',
+                9: 'Sep',
+                10: 'Oct',
+                11: 'Nov',
+                12: 'Dec',
+                13: 'IntC'
+            };
+
+            const cardPinyinB = {
+                1: '',
+                2: 'Feb',
+                3: 'Mar',
+                4: 'ㄙS',
+                5: 'May',
+                6: 'Jun',
+                7: 'Jul',
+                8: 'Aug',
+                9: 'Sep',
+                10: 'Oct',
+                11: 'Nov',
+                12: '',
+                13: ''
+            };
+
+            const cardPinyinAB = {
+                1: 'AB1',
+                2: 'Feb',
+                3: 'Mar',
+                4: 'ㄙS',
+                5: 'May',
+                6: 'Jun',
+                7: 'AB7',
+                8: 'Aug',
+                9: 'Sep',
+                10: 'Oct',
+                11: 'Nov',
+                12: '',
+                13: ''
+            };
+
+            const cardPinyinO = {
+                1: 'O1',
+                2: 'Feb',
+                3: 'Mar',
+                4: 'ㄙS',
+                5: 'May',
+                6: 'Jun',
+                7: 'AB7',
+                8: 'Aug',
+                9: 'Sep',
+                10: 'Oct',
+                11: 'Nov',
+                12: '',
+                13: ''
+            };
+
+            switch (card.suit) {
+              case '🅱️':
+                console.log('B型的拼音.');
+                return `${card.suit} ${cardNames[card.value] || card.value} ${cardPinyinB[card.value]}`;
+              break;
+              case '🆎':
+                console.log('AB型的拼音.');
+                return `${card.suit} ${cardNames[card.value] || card.value} ${cardPinyinAB[card.value]}`;
+              break;
+              case '🅾️':
+                console.log('O型的拼音.');
+                return `${card.suit} ${cardNames[card.value] || card.value} ${cardPinyinO[card.value]}`;
+              break;
+              case '🅰️':
+                console.log('A型的拼音.');
+                return `${card.suit} ${cardNames[card.value] || card.value} ${cardPinyinA[card.value]}`;
+              break;
+              default:
+                console.log(`Sorry, we are out of ${expr}.`);
+                return `${card.suit} ${cardNames[card.value] || card.value}`;
+              break;
+            }
+            //return `${card.suit} ${cardNames[card.value] || card.value}`;
         }
 
         // 👁比較花色，如果數值相同，花色順序：♠️ > ♥️ > ♦️ > ♣️
