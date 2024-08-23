@@ -1,0 +1,265 @@
+{
+    "logo": "https://memeprod.ap-south-1.linodeobjects.com/user-maker-thumbnail/c8e7b15f1e97f2b4f3854032ca608982.gif",
+    "spider": "https://t4.doube.eu.org/spider.jar;md5;3f392906996ac13aaeb8c91956f95f7f",
+    "sites": [
+        {
+            "key": "php2_hmezy",
+            "name": "🟢黑木耳",
+            "type": 4,
+            "api": "https://t4.doube.eu.org/heimuer.php",
+            "quickSearch": 0,
+            "searchable": 1
+        },
+        {
+            "key": "php_huaweiba",
+            "name": "🔴華為吧",
+            "type": 4,
+            "api": "https://t4.doube.eu.org/huaweiba.php",
+            "quickSearch": 0,
+            "searchable": 1
+        },
+        {
+            "key": "php_madou",
+            "name": "🔞麻豆",
+            "type": 4,
+            "api": "https://t4.doube.eu.org/madou.php",
+            "searchable": 1,
+            "quickSearch": 0,
+            "style": {
+                "type": "rect",
+                "ratio": 1.33
+            }
+        },
+        {
+           "key": "文采",
+           "name": "💮文采┃秒播",
+           "type": 3,
+           "api": "csp_Jpys",
+           "jar":"https://github.com/kan31467/1/raw/main/jar/kan.jar",
+           "playerType": 2,
+           "searchable": 1,
+           "quickSearch": 1,
+           "changeable": 1
+       },
+        {
+            "key": "xp_nuiyue",
+            "name": "🍼紐約影视",
+            "type": 3,
+            "api": "csp_XPathFilter",
+            "searchable": 1,
+            "quickSearch": 0,
+            "filterable": 1,
+            "ext": "https://t4.doube.eu.org/site/xp_nuiyue.json"
+        },
+        {
+            "key": "xp_olehdtv",
+            "name": "🔥歐樂影院 | 大陸要翻",
+            "type": 3,
+            "api": "csp_XPathFilter",
+            "searchable": 1,
+            "quickSearch": 0,
+            "filterable": 1,
+            "ext": "https://t4.doube.eu.org/site/xp_olehdtv.json"
+        },
+        {
+            "key": "bfa101f4d8a61b23240d05343b173551",
+            "name": "ETH TV",
+            "type": 4,
+            "api": "http://videos.web6868.com/cinema/babd627fea9f0eb256fd2d04689a9a85422d18cb7ebe3a0627dd1e5b22f49207/66323a32653a33633a32613a36393a6661/1c8c47becf333f1a2e51404bd5ed3fcb805ae7eef235a1b8d9ea5fda872b7c78/",
+            "searchable": 1,
+            "quickSearch": 0,
+            "playsearch": 0,
+            "filterable": 0
+        },
+        {
+            "key": "eb909bf8805eb71c719631f5840b1cca",
+            "name": "樂視影視",
+            "type": 4,
+            "api": "http://videos.web6868.com/gplitv/babd627fea9f0eb256fd2d04689a9a85422d18cb7ebe3a0627dd1e5b22f49207/66323a32653a33633a32613a36393a6661/1c8c47becf333f1a2e51404bd5ed3fcb805ae7eef235a1b8d9ea5fda872b7c78/",
+            "searchable": 1,
+            "quickSearch": 0,
+            "playsearch": 0,
+            "filterable": 0
+        },
+        {
+            "key":"py_liushoushaofu",
+            "name":"🔞 留守少妇",
+            "type":4,
+            "api":"https://py.doube.eu.org/api?site=liushoushaofu",
+            "searchable":0,
+            "quickSearch":0,
+            "filterable":0,
+            "changeable":0,
+            "style":{"type":"rect","ratio":1.5}
+        },
+        {
+            "key":"py_aidouchuanmei",
+            "name":"🔞 爱豆传媒",
+            "type":4,
+            "api":"https://py.doube.eu.org/api?site=aidouchuanmei",
+            "searchable":1,
+            "quickSearch":0,
+            "filterable":0,
+            "changeable":0,
+            "style":{"type":"rect","ratio":1.5}
+        },
+        {
+            "key": "有声小说js",
+            "name": "🎧有声┃小说",
+            "type": 3,
+            "api": "https://gitlab.com/fantaiying/ext/-/raw/main/drpy2.min.js",
+            "ext": "https://gitlab.com/fantaiying/ext/-/raw/main/有声小说吧.js",
+            "style": {
+              "type": "rect",
+              "ratio": 1
+            },
+            "searchable": 1,
+            "quickSearch": 0,
+            "changeable": 0
+        },
+        {
+            "key": "py_liushoushaofu",
+            "name": "🤪 留守少妇(T4_Py)",
+            "type": 4,
+            "api": "https://py.doube.eu.org/api?site=liushoushaofu",
+            "searchable": 1,
+            "quickSearch": 0,
+            "filterable": 0,
+            "style": {
+              "type": "rect",
+              "ratio": 1.33
+            }
+        }
+        ],
+    "lives": [
+        {
+            "name": "🇹🇼4GTV",
+            "url": "https://www.mytvsuper.com.mp/4gtv_dussl.m3u"
+        },
+        {
+            "name": "🍌香蕉哥直播",
+            "url": "https://tv.iill.top/m3u/Gather"
+        },
+        {
+            "name": "🌽MyTvSuper",
+            "url": "http://xg.52sw.top:5000/mytvsuper.m3u"
+        },
+        {
+            "name": "🐼SunnyLive",
+            "url": "file://Download/晴天0723.txt",
+            "epg": "https://epg.112114.xyz/pp.xml",
+            "logo": "https://epg.112114.xyz/logo/{name}.png"
+        },
+        {
+            "name": "🐽公众号-宝盒视界",
+            "type": 0,
+            "url": "https://gitcode.net/ygbh66/test/-/raw/master/x.txt",
+            "playerType": 1,
+            "ua": "okhttp/3.15",
+            "epg": "http://epg.112114.xyz/?ch={name}&date={date}",
+            "logo": "https://epg.112114.xyz/logo/{name}.png"
+        },
+        {
+            "name": "🔞18+(Github）",
+            "url": "https://raw.githubusercontent.com/yescopys/box/main/ah/lib/RTV.txt"
+        },
+        {
+            "name": "TVB",
+            "ua": "okhttp/5.2.0",
+            "url": "https://www.mytvsuper.com.mp/Tvb_dussl.m3u",
+            "epg": "https://epg.112114.xyz/pp.xml",
+            "logo": "https://epg.112114.xyz/logo/{name}.png"
+        },
+        {
+            "name": "TW",
+             "ua": "okhttp/5.2.0",
+            "url": "https://www.mytvsuper.com.mp/Tw_dussl.m3u",
+            "epg": "https://epg.112114.xyz/pp.xml",
+            "logo": "https://epg.112114.xyz/logo/{name}.png"
+        },
+        {
+            "name": "TheTV",
+             "ua": "okhttp/5.2.0",
+            "url": "https://www.mytvsuper.com.mp/Thetv_dussl.m3u",
+            "epg": "https://epg.112114.xyz/pp.xml",
+            "logo": "https://epg.112114.xyz/logo/{name}.png"
+        },
+        {
+            "name": "BeeSport",
+             "ua": "okhttp/5.2.0",
+            "url": "https://www.mytvsuper.com.mp/beesport_dussl.m3u",
+            "epg": "https://epg.112114.xyz/pp.xml",
+            "logo": "https://epg.112114.xyz/logo/{name}.png"
+        },
+        {
+            "name": "iTV",
+             "ua": "okhttp/5.2.0",
+            "url": "https://www.mytvsuper.com.mp/itv_dussl.m3u",
+            "epg": "https://epg.112114.xyz/pp.xml",
+            "logo": "https://epg.112114.xyz/logo/{name}.png"
+        },
+        {
+            "name": "ott118",
+            "url": "http://0tt118.getenjoyment.net/m3u.php",
+            "epg": "https://epg.112114.xyz/pp.xml",
+            "logo": "https://epg.112114.xyz/logo/{name}.png"
+        },
+        {
+            "name": "🚫temp",
+            "url": "https://files.catbox.moe/0nc0qx.txt",
+            "epg": "https://epg.112114.xyz/pp.xml",
+            "logo": "https://epg.112114.xyz/logo/{name}.png"
+        },
+        {
+            "name": "🍉新視界TV",
+            "url": "http://u6v.cn/5MF6C7",
+            "epg": "https://epg.112114.xyz/pp.xml",
+            "logo": "https://epg.112114.xyz/logo/{name}.png"
+        },
+        {
+            "name": "🇫🇷巴黎奥运会",
+             "ua": "okhttp/5.2.0",
+            "url": "https://www.mytvsuper.com.mp/Aoyun_dussl.m3u",
+            "epg": "https://epg.112114.xyz/pp.xml",
+            "logo": "https://epg.112114.xyz/logo/{name}.png"
+        },
+        {
+            "name": "搬運-星視界訂閱",
+            "url": "https://t4.doube.eu.org/XingShiJie.txt",
+            "epg": "https://epg.112114.xyz/pp.xml",
+            "logo": "https://epg.112114.xyz/logo/{name}.png"
+        },
+        {
+            "name": "日本頻道訂閱",
+            "url": "https://anbox118.serv00.net/japan.m3u",
+            "epg": "https://epg.112114.xyz/pp.xml",
+            "logo": "https://epg.112114.xyz/logo/{name}.png"
+        },
+        {
+            "name": "🀄斯馬特",
+            "url": "https://tang.hz.cz/api/user?token=032fb225",
+            "epg": "https://epg.112114.xyz/pp.xml",
+            "logo": "https://epg.112114.xyz/logo/{name}.png"
+        },
+        {
+            "name": "UPLive",
+            "type": 0,
+            "url": "https://files.catbox.moe/g4zbng.json",
+            "ua": "okhttp/4.1.2.0",
+            "epg": "http://epg.112114.xyz/?ch={name}&date={date}",
+            "logo": "https://epg.112114.xyz/logo/{name}.png"
+        },
+        {
+            "name": "ETH(JS)",
+            "api": "https://files.catbox.moe/fpp62d.js",
+            "epg": "https://epg.112114.xyz/pp.xml",
+	    "logo": "https://epg.112114.xyz/logo/{name}.png",
+            "type": 3,
+            "ua": "okhttp/4.12.0"
+        }
+    ],
+    "ads": [
+      "static-mozai.4gtv.tv",
+      "s3t3d2y8.afcdn.net"
+    ]
+}
